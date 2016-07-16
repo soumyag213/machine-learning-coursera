@@ -16,7 +16,7 @@ p = zeros(m, 1);
 %
 
 for i = 1:m
-	a = X([i], [1:3]);
+	a = X(i,:);
 	h = sum(theta'.*a);
 	g = sigmoid(h);
 	if (g>=0.5)

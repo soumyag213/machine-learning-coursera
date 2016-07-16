@@ -20,15 +20,15 @@ for iter = 1:num_iters
 	
 	L=0; N=0;	
 		for i = 1:m
-		
-			a = X([i],[1,2]);
-			h = theta'.*a;
-			s = sum(h);
+			s = sum(theta'.*X(i,:));
+			%a = X(i,:);
+			%h = theta'.*a;
+			%s = sum(h);
 			L+= (s - y(i))*(X([i],[1]));
 			N+= (s - y(i))*(X([i],[2]));
 		endfor
-		l = (alpha*L)/m;
-		n = (alpha*N)/m;
+	l = (alpha*L)/m;
+	n = (alpha*N)/m;
 	theta(1) = theta(1) - l;
 	theta(2) = theta(2) - n;
 	

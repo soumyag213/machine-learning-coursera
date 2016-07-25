@@ -24,12 +24,14 @@ J = sum((X*(theta) - y).^2);
 temp = theta;
 temp(1,:)=0;
 reg = lambda*sum(temp.*temp);
-J = (0.5/m)*(J+reg)
+J = (0.5/m)*(J+reg);
 
+
+K= J;
 %size(grad)
 grad(1,1) = (1/m)*sum( ((X*theta)-y) .* (X(:,1)) );
-for J = 2:size(theta)
-grad(J,1) = (1/m)*sum( ((X*theta)-y) .* (X(:,J)) ) + (lambda/m)*theta(J,1);
+for K = 2:size(theta)
+grad(K,1) = (1/m)*sum( ((X*theta)-y) .* (X(:,K)) ) + (lambda/m)*theta(K,1);
 endfor
 % =========================================================================
 

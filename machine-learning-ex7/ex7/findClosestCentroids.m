@@ -22,18 +22,6 @@ idx = zeros(size(X,1), 1);
 %
 
 
-%for i = 1:size(X,1)
-%	b = zeros(1,K);
-%		for j = 1:K
-%			su =0;
-%			for  p = 1:2
-%				su = su + (X(i,p)-centroids(j,p))^2;			
-%			endfor
-%			b(j) = su;
-%		endfor
-%	[c, idx(i)] = min(b);
-
-%endfor
 
 for i = 1:size(X,1)
 	b = zeros(1,K);	

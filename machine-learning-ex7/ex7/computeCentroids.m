@@ -32,14 +32,14 @@ for i = 1:K
 	for j = 1:m
 		if (idx(j)==i)
 			c++;			
-			for p =1:n
-			su(1,p) = su(1,p) +X(j,p);
-			endfor
+			%for p =1:n
+			su(1,:) = su(1,:) +X(j,:);
+			%endfor
 		endif
 	endfor
-	for p = 1:n
-	centroids(i,p) = (su(1,p))/c;
-	endfor
+	%for p = 1:n
+	centroids(i,:) = (su(1,:))/c;
+	%endfor
 endfor
 
 
